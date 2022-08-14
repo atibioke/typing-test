@@ -9,9 +9,15 @@ function Timer({ status, setStatus }) {
   useEffect(() => {
     if (+initialTime && status === "started") {
       let myInterval = setInterval(() => {
-        if (minutes >= 0) {
-          setSeconds(59);
-        }
+        
+        if (minutes >= 0 ) {
+          if(minutes === 0 && seconds === 0) {
+            setSeconds("0")
+          }else {
+            setSeconds(59)
+          }
+     
+      }
         if (seconds > 0) {
           setSeconds(seconds - 1);
         }
