@@ -43,7 +43,7 @@ function App() {
     <div className="App">
       {status === "pending" && <h3>Set time then click Start to begin</h3>}
       <Timer status={status} setStatus={setStatus} />
-      {status === "started" && (
+      {status === "started" || status === "finished"&& (
         <div className="section">
           <div className="card">
             <div className="card-content">
