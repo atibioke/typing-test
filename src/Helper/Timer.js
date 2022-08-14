@@ -13,6 +13,8 @@ function Timer({ status, setStatus }) {
         if (minutes >= 0 ) {
           if(minutes === 0 && seconds === 0) {
             setSeconds("0")
+            setInitalTime("0")
+            
           }else {
             setSeconds(59)
           }
@@ -24,6 +26,7 @@ function Timer({ status, setStatus }) {
         if (seconds === 0) {
           if (minutes === 0) {
             setStatus("finished");
+           setInitalTime("0")
             return clearInterval(myInterval);
           } else {
             setMinutes((prev) => prev - 1);
