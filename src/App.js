@@ -3,7 +3,7 @@ import Timer from "./Helper/Timer";
 import WordsContainer from "./Helper/WordsContainer";
 import randomWords from "random-words";
 import "./main.css";
-import ScoreContainer from "./ScoreContainer";
+import ScoreContainer from "./Helper/ScoreContainer";
 const numOfWords = 250;
 
 function App() {
