@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import Timer from "./Helper/Timer";
+import WordsContainer from "./Helper/WordsContainer";
 import randomWords from "random-words";
 import "./main.css";
+import ScoreContainer from "./ScoreContainer";
 const numOfWords = 250;
 
 function App() {
@@ -12,7 +14,6 @@ function App() {
   const [inCorrectWords, setInCorrectWords] = useState(0);
   const [status, setStatus] = useState("pending");
   const textInput = useRef(null);
-
 
   useEffect(() => {
     setWords(generateWords());
@@ -41,28 +42,11 @@ function App() {
 
   return (
     <div className="App">
-      {status === "pending" && <h3>Set time then click Start to begin</h3>}
-      <Timer status={status} setStatus={setStatus} />
-      {status === "started" || status === "finished"&& (
-        <div className="section">
-          <div className="card">
-            <div className="card-content">
-              <div className="content">
-                {words.map((word, index) => (
-                  <span key={index}>
-                    <span>
-                      {word.split("").map((letter, idx) => (
-                        <span key={idx}>{letter}</span>
-                      ))}
-                    </span>
-                    <span> </span>
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+      {(status === "pending" || status === "finished") && (
+        <h3>Set time then click Start to begin</h3>
       )}
+      <Timer status={status} setStatus={setStatus} />
+      {status === "started" && <WordsContainer words={words} />}
       <div className="input-container">
         <input
           ref={textInput}
@@ -83,26 +67,11 @@ function App() {
         </div>
       )}
 
-   
-
       {status === "finished" && (
-        <div className="section score-container">
-          <div className="columns">
-            <div className="column">
-              <p>Score:</p>
-              <p>{correctWords}</p>
-            </div>
-            <div className="column">
-              <div>Accuracy: </div>
-              <p>
-                {isNaN(correctWords/(correctWords + inCorrectWords)) ? '0' : Math.round(
-                  (correctWords / (correctWords + inCorrectWords)) * 100
-                )}
-                %
-              </p>
-            </div>
-          </div>
-        </div>
+        <ScoreContainer
+          correctWords={correctWords}
+          inCorrectWords={inCorrectWords}
+        />
       )}
     </div>
   );
