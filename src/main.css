@@ -1,0 +1,47 @@
+.App{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container{
+    display: flex;
+    justify-content: center;
+}
+
+.start-button{
+    background-color: rgb(73, 91, 161);
+    color: white;
+    padding: 15px;
+    width: 80px;
+    border-radius: 5px;
+}
+
+.minutes-input{
+    width: 50%;
+    height: 35px;
+    margin-top: 15px;
+}
+
+.minutes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+}
+
+.input{
+    margin-bottom: 15px;
+    width: 1400px;
+    height: 40px;
+    text-align: center;
+
+}
+
+
+
+
+
+
+
+
