@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import Timer from "./Helper/Timer";
-import WordsContainer from "./Helper/WordsContainer";
 import randomWords from "random-words";
 import "./main.css";
 const numOfWords = 250;
