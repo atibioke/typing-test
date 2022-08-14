@@ -1,7 +1,12 @@
+body{
+    background-color: rgb(155, 237, 226);
+}
+
 .App{
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .input-container{
@@ -36,6 +41,10 @@
     height: 40px;
     text-align: center;
 
+}
+
+.score-container, h1{
+    font-size: 28px;
 }
 
 

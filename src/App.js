@@ -12,9 +12,8 @@ function App() {
   const [correctWords, setCorrectWords] = useState(0);
   const [inCorrectWords, setInCorrectWords] = useState(0);
   const [status, setStatus] = useState("pending");
-  const textInput = useRef(null)
+  const textInput = useRef(null);
 
-console.log(status, "App 1");
 
   useEffect(() => {
     setWords(generateWords());
@@ -43,10 +42,31 @@ console.log(status, "App 1");
 
   return (
     <div className="App">
-      <Timer status={status} setStatus= {setStatus} />
+      {status === "pending" && <h3>Set time then click Start to begin</h3>}
+      <Timer status={status} setStatus={setStatus} />
+      {status === "started" && (
+        <div className="section">
+          <div className="card">
+            <div className="card-content">
+              <div className="content">
+                {words.map((word, index) => (
+                  <span key={index}>
+                    <span>
+                      {word.split("").map((letter, idx) => (
+                        <span key={idx}>{letter}</span>
+                      ))}
+                    </span>
+                    <span> </span>
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       <div className="input-container">
         <input
-        ref={textInput}
+          ref={textInput}
           type="text"
           className="input"
           onKeyDown={handleKeyDown}
@@ -55,79 +75,18 @@ console.log(status, "App 1");
           disabled={status !== "started"}
         />
       </div>
-      { (status === "pending" || status === "finished") && <div className="button-container">
-        <button className="start-button" onClick={()=>setStatus("started")} >Start</button>
-      </div>}
-      {/* (
-        <div className="section">
-          <div className="card">
-            <div className="card-content">
-              <div className="content">
-                {words.map((word, index) => (
-                  <span key={index}>
-                    <span>
-                      {word.split("").map((letter, idx) => (
-                        <span key={idx}>{letter}</span>
-                      ))}
-                    </span>
-                    <span> </span>
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
+      {(status === "pending" || status === "finished") && (
+        <div className="button-container">
+          <button className="start-button" onClick={() => setStatus("started")}>
+            Start
+          </button>
         </div>
-      ) */}
+      )}
 
-
-{/* //NEEDS ADJUSTMENT 1 */}
-
-{ status === "started" && 
-        <div className="section">
-          <div className="card">
-            <div className="card-content">
-              <div className="content">
-                {words.map((word, index) => (
-                  <span key={index}>
-                    <span>
-                      {word.split("").map((letter, idx) => (
-                        <span key={idx}>{letter}</span>
-                      ))}
-                    </span>
-                    <span> </span>
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div> }
-      
-
-{/* //ENDING */}
-
-      {/* {status === "finished" && (
-        <div className="section">
-          <div className="columns">
-            <div className="column">
-              <p>Score:</p>
-              <p>{correctWords}</p>
-            </div>
-            <div className="column">
-              <div>Accuracy: </div>
-              <p>
-                {Math.round(
-                  (correctWords / (correctWords + inCorrectWords)) * 100
-                )}
-                %
-              </p>
-            </div>
-          </div>
-        </div>
-      )} */}
    
-   {/* //NEEDS ADJUSTMENT 2*/}
-    
-       { status === "finished" &&  <div className="section">
+
+      {status === "finished" && (
+        <div className="section score-container">
           <div className="columns">
             <div className="column">
               <p>Score:</p>
@@ -136,17 +95,15 @@ console.log(status, "App 1");
             <div className="column">
               <div>Accuracy: </div>
               <p>
-                {Math.round(
+                {isNaN(correctWords/(correctWords + inCorrectWords)) ? '0' : Math.round(
                   (correctWords / (correctWords + inCorrectWords)) * 100
                 )}
                 %
               </p>
             </div>
           </div>
-        </div>}
-      
-
-      {/* //ENDING */}
+        </div>
+      )}
     </div>
   );
 }
