@@ -52,7 +52,6 @@ function App() {
           type="text"
           className="input"
           onKeyDown={handleKeyDown}
-          placeholder="Type Here"
           value={currentInput}
           onChange={(e) => setCurrentInput(e.target.value)}
           disabled={status !== "started"}
