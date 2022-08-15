@@ -22,7 +22,7 @@ justify-self: center;
 .start-button{
     background-color: rgb(38, 67, 179);
     color: white;
-    padding: 15px;
+    padding: 10px;
     width: 80px;
     font-size: 18px;
     border-radius: 5px;
@@ -31,7 +31,7 @@ justify-self: center;
 .retry-btn{
     background-color: rgb(224, 23, 23);
     color: white;
-    padding: 15px;
+    padding: 10px;
     margin: 0 auto;
     width: 80px;
     font-size: 18px;
