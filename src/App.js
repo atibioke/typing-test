@@ -11,6 +11,7 @@ function App() {
   const [currentInput, setCurrentInput] = useState("");
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [correctWords, setCorrectWords] = useState(0);
+
   const [inCorrectWords, setInCorrectWords] = useState(0);
   const [status, setStatus] = useState("pending");
   const textInput = useRef(null);
@@ -42,7 +43,7 @@ function App() {
 
   return (
     <div className="App">
-      {(status === "pending" || status === "finished") && (
+      {(status === "pending" ) && (
         <h3>Set time then click Start to begin</h3>
       )}
       <Timer status={status} setStatus={setStatus} />
@@ -59,7 +60,7 @@ function App() {
           disabled={status !== "started"}
         />
       </div>
-      {(status === "pending" || status === "finished") && (
+      {(status === "pending" ) && (
         <div className="button-container">
           <button className="start-button" onClick={() => setStatus("started")}>
             Start
@@ -71,6 +72,7 @@ function App() {
         <ScoreContainer
           correctWords={correctWords}
           inCorrectWords={inCorrectWords}
+          setStatus={setStatus}
         />
       )}
     </div>

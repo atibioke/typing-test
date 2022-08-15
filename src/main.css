@@ -14,10 +14,24 @@ body{
     justify-content: center;
 }
 
+.retry-button-container{
+display: flex;
+justify-self: center;
+}
+
 .start-button{
-    background-color: rgb(73, 91, 161);
+    background-color: rgb(38, 67, 179);
     color: white;
     padding: 15px;
+    width: 80px;
+    border-radius: 5px;
+}
+
+.retry-btn{
+    background-color: rgb(224, 23, 23);
+    color: white;
+    padding: 15px;
+    margin: 0 auto;
     width: 80px;
     border-radius: 5px;
 }
@@ -37,8 +51,8 @@ body{
 
 .input{
     margin-bottom: 15px;
-    max-width: 1400px;
-    height: 40px;
+    width: 300px;
+    height: 47px;
     text-align: center;
 
 }
