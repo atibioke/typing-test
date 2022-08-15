@@ -1,5 +1,6 @@
 body{
     background-color: rgb(155, 237, 226);
+ 
 }
 
 .App{
@@ -7,7 +8,7 @@ body{
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
-    height: 100%;
+   
 }
 
 .input-container{
@@ -27,6 +28,7 @@ justify-self: center;
     width: 80px;
     font-size: 18px;
     border-radius: 5px;
+    margin-bottom: 15px;
 }
 
 .retry-btn{
@@ -49,19 +51,24 @@ justify-self: center;
     display: flex;
     flex-direction: column;
     align-items: center;
- 
+    margin-top: 15px;
 }
 
 .input{
     margin-bottom: 15px;
-    width: 300px;
-    height: 47px;
+    width: 350px;
+    height: 60px;
     text-align: center;
 
 }
 
 .score-container, h1{
     font-size: 28px;
+}
+
+h3{
+    margin-top: 15px;
+    font-size: 24px;
 }
 
 
