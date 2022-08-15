@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import Timer from "./Helper/Timer";
-import WordsContainer from "./Helper/WordsContainer";
+import Timer from "./components/Timer";
+import WordsContainer from "./components/WordsContainer";
 import randomWords from "random-words";
 import "./main.css";
-import ScoreContainer from "./Helper/ScoreContainer";
+import ScoreContainer from "./components/ScoreContainer";
 const numOfWords = 250;
 
 function App() {
@@ -43,9 +43,7 @@ function App() {
 
   return (
     <div className="App">
-      {(status === "pending" ) && (
-        <h3>Set time then click Start to begin</h3>
-      )}
+      {status === "pending" && <h3>Set time then click Start to begin</h3>}
       <Timer status={status} setStatus={setStatus} />
       {status === "started" && <WordsContainer words={words} />}
       <div className="input-container">
@@ -60,7 +58,7 @@ function App() {
           disabled={status !== "started"}
         />
       </div>
-      {(status === "pending" ) && (
+      {status === "pending" && (
         <div className="button-container">
           <button className="start-button" onClick={() => setStatus("started")}>
             Start

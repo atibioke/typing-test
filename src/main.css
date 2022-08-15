@@ -1,79 +1,70 @@
-
-.App{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-x: hidden;
-    margin: auto 0;
-    background-color: rgb(155, 237, 226);
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  margin: auto 0;
+  background-color: rgb(155, 237, 226);
 }
 
-.input-container{
-    display: flex;
-    justify-content: center;
+.input-container {
+  display: flex;
+  justify-content: center;
 }
 
-.retry-button-container{
-display: flex;
-justify-self: center;
+.retry-button-container {
+  display: flex;
+  justify-self: center;
 }
 
-.start-button{
-    background-color: rgb(38, 67, 179);
-    color: white;
-    padding: 10px;
-    width: 80px;
-    font-size: 18px;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    cursor: pointer;
+.start-button {
+  background-color: rgb(38, 67, 179);
+  color: white;
+  padding: 10px;
+  width: 80px;
+  font-size: 18px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  cursor: pointer;
 }
 
-.retry-btn{
-    background-color: rgb(224, 23, 23);
-    color: white;
-    padding: 10px;
-    margin: 0 auto;
-    width: 80px;
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
+.retry-btn {
+  background-color: rgb(224, 23, 23);
+  color: white;
+  padding: 10px;
+  margin: 0 auto;
+  width: 80px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.minutes-input{
-    width: 50%;
-    height: 40px;
-    margin-top: 15px;
+.minutes-input {
+  width: 50%;
+  height: 40px;
+  margin-top: 15px;
 }
 
-.minutes{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 15px;
+.minutes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
 }
 
-.input{
-    margin-bottom: 15px;
-    width: 350px;
-    height: 60px;
-    text-align: center;
-
+.input {
+  margin-bottom: 15px;
+  width: 350px;
+  height: 60px;
+  text-align: center;
 }
 
-.score-container, h1{
-    font-size: 28px;
+.score-container,
+h1 {
+  font-size: 28px;
 }
 
-h3{
-    margin-top: 15px;
-    font-size: 24px;
+h3 {
+  margin-top: 15px;
+  font-size: 24px;
 }
-
-
-
-
-
-
-
-
