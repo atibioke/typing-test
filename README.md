@@ -1,6 +1,6 @@
 # Typing Test
 
-### Typing Test as an application built to measure your typing speed and accuracy within a short time countdown
+### Typing Test is an application built to measure your typing speed and accuracy within a short time countdown
 
 ## Table of Contents
 
