@@ -11,7 +11,6 @@ function App() {
   const [currentInput, setCurrentInput] = useState("");
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [correctWords, setCorrectWords] = useState(0);
-
   const [inCorrectWords, setInCorrectWords] = useState(0);
   const [status, setStatus] = useState("pending");
   const textInput = useRef(null);
