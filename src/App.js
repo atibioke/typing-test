@@ -43,7 +43,7 @@ function App() {
   return (
     <div className="App">
       {status === "pending" && <h3>web app that teaches you how to type correctly on your keyboard using detailed tracking</h3>}
-      {status === "pending" && <h3>Set time then click Start to begin</h3>}
+      {status === "pending" && <h3>Set minute(s) then click Start to begin</h3>}
       <Timer status={status} setStatus={setStatus} />
       {status === "started" && <WordsContainer words={words} />}
       <div className="input-container">
